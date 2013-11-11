@@ -18,6 +18,7 @@
     alert("no canvas :(");
   }});
 </script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/ddpowerzoomer.js"></script>
 <div id="pagecontain">
 <header>
 	<div id="headerpic"></div>

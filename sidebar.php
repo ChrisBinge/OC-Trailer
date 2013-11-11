@@ -1,4 +1,4 @@
-<div id="bar-contain">
+<aside>
 	<h2>Categories</h2>
 	
-</div>
+</aside>
