@@ -3,7 +3,6 @@
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
-COMMIT TEST
 /**
  * Correct `block` display not defined in IE 8/9.
  */
@@ -417,11 +416,11 @@ table {
   margin: 0 auto;
 }
 
-#bar-contain {
-float: left;
+aside {
 margin-right: 10px;
-min-width: 240px;
-max-width: 15%;
+float:left;
+width: 10rem;
+max-width: 20rem;
 height: 800px;
 background: rgb(102,102,102); /* Old browsers */
 background: -moz-linear-gradient(left, rgba(102,102,102,1) 0%, rgba(186,186,186,1) 50%, rgba(102,102,102,1) 100%); /* FF3.6+ */
@@ -440,11 +439,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', end
   list-style-position: inside;
 }
 
+#product-feature {
+  float: right;
+  margin-left: 10%;
+  padding-bottom: 35px;
+}  
+
 article {
-  padding-top: 15px;
-  padding-bottom: 200px;
+  padding: 5rem 5rem 200px 15rem;
+  max-width: 960px;
 }
 
 .entry-content img {
   margin-left: 2%;
+  max-width: 50%;
+}
+
+#spec-wrap {
+  float: right;
+}
+
+#photo-wrap {
+  float: right;
+  width: 50%;
+}
+
+#content-wrap {
+  width:50%;
+}
+
+.thumb
+{
+  width: 200px;
+  height: 120px;
+}
+
+#photo-wrap > p {
+  margin-left: 19%;
+  margin-bottom: 3%;
+}
+
+#payment
+{
+  margin-top: 10%;
+  margin-right: 10%;
 }

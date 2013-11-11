@@ -16,11 +16,36 @@ get_header(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="entry-header">
 
+				
 				<!-- Display featured image in right-aligned floating div -->
-				<div style="float:right; margin: 10px">
-					<?php the_post_thumbnail( array(300,300) ); ?>
-				</div>
+				<div id="photo-wrap">
+					
+					<script type="text/javascript">
 
+jQuery(document).ready(function($){ //fire on DOM ready
+	$('#zoom_01').addpowerzoom({
+		defaultpower: 2,
+		powerrange: [2,5],
+		largeimage: null,
+		magnifiersize: [100,100] //<--no comma following last option!
+	})
+});	
+</script>
+					<div id="product-feature">
+						<img id="zoom_01" src="<?php bloginfo('template_url'); ?>/images/lights/light.png"/>
+					</div>
+					
+					<p>Specs:</p>
+					<div id="spec-wrap">
+						
+							<?php if ( get_post_meta( get_the_ID(), 'product_spec', true ) ) : ?>
+    							<a href="<?php bloginfo('template_url'); ?>/images/lights/<?php echo get_post_meta( get_the_ID(), 'product_spec', true ) ?>" rel="bookmark">
+       								 <img class="thumb" src="<?php bloginfo('template_url'); ?>/images/lights/<?php echo get_post_meta( get_the_ID(), 'product_spec', true ) ?>" alt="<?php the_title(); ?>" />
+    							</a>
+							<?php endif; ?>
+					</div>	
+				</div>
+				<div id="content-wrap">		
 				<!-- Display Title and ID -->
 				<strong>Product: </strong><?php the_title(); ?><br />
 				<strong>Product ID: </strong>
@@ -45,8 +70,12 @@ get_header(); ?>
 			</header>
 
 			<!-- Display Product contents -->
-			<div class="entry-content"><?php the_content(); ?></div>
-
+			<div class="entry-content"><?php the_content(); ?>
+				<div id="payment">
+					<img id="cart" src="<?php bloginfo('template_url'); ?>/images/addtocartbutton.png"/>
+				</div>
+			</div>
+		</div>
 		</article>
 
 	<?php endwhile; ?>
