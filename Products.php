@@ -66,6 +66,9 @@ intval( get_post_meta( $products->ID,
 $product_price =
 esc_html( get_post_meta( $products->ID,
 'product_price', true ) );
+$product_spec =
+esc_html( get_post_meta( $products->ID,
+'product_spec', true ) );
 ?>
 <table>
 <tr>
@@ -97,6 +100,12 @@ $movie_rating ); ?>>
 name="product_price_field"
 value="<?php echo $product_price; ?>" /></td>
 </tr>
+<tr>
+<td style="width: 100%">Specs</td>
+<td><input type="text" size="80"
+name="product_spec_field"
+value="<?php echo $product_spec; ?>" /></td>
+</tr>
 </table>
 <?php }
 
@@ -119,6 +128,11 @@ if ( isset( $_POST['product_price_field'] ) &&
 $_POST['product_price_field'] != '' ) {
 update_post_meta( $movie_review_id, 'product_price',
 $_POST['product_price_field'] );
+}
+if ( isset( $_POST['product_spec_field'] ) &&
+$_POST['product_spec_field'] != '' ) {
+update_post_meta( $movie_review_id, 'product_spec',
+$_POST['product_spec_field'] );
 }
 if ( isset( $_POST['movie_review_rating'] ) &&
 $_POST['movie_review_rating'] != '' ) {
