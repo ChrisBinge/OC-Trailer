@@ -81,6 +81,10 @@ body {
     margin: 0;
 }
 
+html,body {
+  height: 100%;
+}
+
 /* ==========================================================================
    Links
    ========================================================================== */
@@ -409,19 +413,15 @@ table {
     border-spacing: 0;
 }
 
-#headerpic {
-  background: url(images/headerlogo.png);
-  height: 255px;
-  max-width: 960px;
-  margin: 0 auto;
-}
+
+/* Sidebar ************************************/
 
 aside {
+display: table-cell;
 margin-right: 10px;
-float:left;
-width: 10rem;
-max-width: 20rem;
-height: 800px;
+width: 25%;
+max-width: 15rem;
+height: 100%;
 background: rgb(102,102,102); /* Old browsers */
 background: -moz-linear-gradient(left, rgba(102,102,102,1) 0%, rgba(186,186,186,1) 50%, rgba(102,102,102,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(102,102,102,1)), color-stop(50%,rgba(186,186,186,1)), color-stop(100%,rgba(102,102,102,1))); /* Chrome,Safari4+ */
@@ -432,8 +432,26 @@ background: linear-gradient(to right, rgba(102,102,102,1) 0%,rgba(186,186,186,1)
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#666666',GradientType=1 ); /* IE6-9 */
 }
 
-#primary {
+
+/* Header ************************************/
+
+#headerpic {
+  background: url(images/headerlogo.png);
+  height: 255px;
   max-width: 960px;
+  margin: 0 auto;
+}
+
+#content {
+  width: 90%;
+  margin-left: 3%;
+  background-color: #fff;
+}
+
+#primary {
+  display: table;
+  max-width: 960px;
+  width: 100%;
   background-color: #fff;
   margin: 0 auto;
   list-style-position: inside;
@@ -442,30 +460,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', end
 #product-feature {
   float: right;
   margin-left: 10%;
+  margin-right: 3%;
   padding-bottom: 35px;
 }  
 
 article {
-  padding: 5rem 5rem 200px 15rem;
-  max-width: 960px;
+  width: 100%;
+}
+
+.entry-content {
+  width: 60%;
 }
 
 .entry-content img {
   margin-left: 2%;
-  max-width: 50%;
+  max-width: 80%;
 }
 
 #spec-wrap {
   float: right;
-}
-
-#photo-wrap {
-  float: right;
-  width: 50%;
-}
-
-#content-wrap {
-  width:50%;
+  clear: right;
+  margin-right: 3%;
 }
 
 .thumb

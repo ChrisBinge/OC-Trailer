@@ -15,11 +15,7 @@ get_header(); ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="entry-header">
-
-				
-				<!-- Display featured image in right-aligned floating div -->
-				<div id="photo-wrap">
-					
+				<!-- Display featured image in right-aligned floating div -->	
 					<script type="text/javascript">
 
 jQuery(document).ready(function($){ //fire on DOM ready
@@ -31,20 +27,19 @@ jQuery(document).ready(function($){ //fire on DOM ready
 	})
 });	
 </script>
+			<div id="img-wrap">
 					<div id="product-feature">
 						<img id="zoom_01" src="<?php bloginfo('template_url'); ?>/images/lights/light.png"/>
 					</div>
-					
-					<p>Specs:</p>
 					<div id="spec-wrap">
-						
+						<p>Specs:</p>
 							<?php if ( get_post_meta( get_the_ID(), 'product_spec', true ) ) : ?>
     							<a href="<?php bloginfo('template_url'); ?>/images/lights/<?php echo get_post_meta( get_the_ID(), 'product_spec', true ) ?>" rel="bookmark">
        								 <img class="thumb" src="<?php bloginfo('template_url'); ?>/images/lights/<?php echo get_post_meta( get_the_ID(), 'product_spec', true ) ?>" alt="<?php the_title(); ?>" />
     							</a>
 							<?php endif; ?>
 					</div>	
-				</div>
+			</div>	
 				<div id="content-wrap">		
 				<!-- Display Title and ID -->
 				<strong>Product: </strong><?php the_title(); ?><br />
