@@ -12,14 +12,14 @@ get_header(); ?>
 	<?php $mypost = array( 'post_type' => 'products' );
 	$loop = new WP_Query( $mypost ); ?>
 	<!-- Cycle through all posts -->
-	<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+	<?php wp_reset_query(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="entry-header">
 				<!-- Display featured image in right-aligned floating div -->	
 					<script type="text/javascript">
 
 jQuery(document).ready(function($){ //fire on DOM ready
-	$('#zoom_01').addpowerzoom({
+	$('#product-feature > img').addpowerzoom({
 		defaultpower: 2,
 		powerrange: [2,5],
 		largeimage: null,
@@ -29,7 +29,10 @@ jQuery(document).ready(function($){ //fire on DOM ready
 </script>
 			<div id="img-wrap">
 					<div id="product-feature">
-						<img id="zoom_01" src="<?php bloginfo('template_url'); ?>/images/lights/light.png"/>
+						<?php
+							if ( has_post_thumbnail() ) {
+  								the_post_thumbnail(); }
+  						?>
 					</div>
 					<div id="spec-wrap">
 						<p>Specs:</p>
@@ -72,9 +75,13 @@ jQuery(document).ready(function($){ //fire on DOM ready
 			</div>
 		</div>
 		</article>
+		
+		
+		<?php comments_template(); ?>
 
-	<?php endwhile; ?>
 	</div>
+
 </div>
-<?php wp_reset_query(); ?>
+
+
 <?php get_footer(); ?>
