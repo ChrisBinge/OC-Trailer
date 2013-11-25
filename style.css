@@ -499,3 +499,54 @@ article {
   margin-top: 10%;
   margin-right: 10%;
 }
+
+/*  Comments ************************************/
+ 
+#reply-title {
+border-top: 2px solid #0A74A8;
+border-bottom: 2px solid #0A74A8;
+} 
+ 
+ 
+ 
+#title
+ {margin-left: 5px}
+ 
+.commentratingbox
+{
+font-weight: bold;
+  position: relative;
+ 
+  background-color: #0A74A8;
+  border-radius: 85%;
+  margin:4%;
+}
+
+element.style
+{border: 1px solid;}
+
+
+element.style {
+font-weight: bold;
+color: #0A74A8;
+}
+
+.comment-body {
+border-style: dotted solid;
+border-color: #0A74A8;
+}
+BLEEP BLORP!
+lkasdjf;lakdsjf
+
+
+
+
+
+
+
+
+
+
+
+
+
